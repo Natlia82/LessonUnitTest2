@@ -28,3 +28,17 @@ test('matchers two', () => {
         { name: 'лунтик', health: 10 },
     ]);
 });
+
+test('matchers three', () => {
+    const result = matchers([
+        { name: 'гена', health: 70 },
+        { name: 'мила', health: 80 },
+        { name: 'лунтик', health: 10 },
+    ]);
+
+    expect(result).not.toBe([
+        { name: 'мила', health: 80 },
+        { name: 'гена', health: 70 },
+        { name: 'лунтик', health: 10 },
+    ]);
+});
